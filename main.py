@@ -3,3 +3,94 @@ import os
 print("Hello world from ...")
 os.system("python --version")
 
+# A Cada Tres Números:
+"""
+Crea una función llamada "cada_tres_numeros" que tenga un parámetro llamado "inicio".
+
+La función debe devolver (return) una "lista" de cada tres números entre inicio y 100 (ambos inclusive). Por ejemplo, cada_tres_numeros(91) debe devolver la lista [91, 94, 97, 100]. Si "start" es mayor que 100, la función debe devolver una lista vacía.
+
+1 - Definir la función para que acepte un parámetro para nuestro número inicial.
+
+2 - Calcular los números entre el número inicial y 100 incrementándolos de 3 en 3.
+
+3 - Almacenar los números en una lista.
+
+4 - Devolver la lista.
+
+Para convertir la secuencia de rangos en una lista, podemos pasarla a la función list().
+
+"""
+def cada_tres_numeros(inicio):
+    if inicio > 100:
+        return [] # Devuelve una "lista vacía []", si el número inicial es mayor que 100.
+
+    numeros = list(range(inicio, 101, 3)) # Calcula los números entre el número inicial y 100, incrementándolos de 3 en 3.
+    return numeros # Devuelve la lista de números.
+
+inicio = 91 # Numero inicial.
+resultado = cada_tres_numeros(inicio)
+print(resultado)
+
+"""
+Resumen:
+
+Define una función llamada "cada_tres_numeros" que toma un parámetro "inicio".
+Comprueba si el número inicio es mayor que 100. Si lo es, devuelve una lista vacía []. Esto es para asegurarse de que la función solo trabaje con valores hasta 100.
+Si inicio es válido (menor o igual a 100):
+Genera una lista de números utilizando list(range(inicio, 101, 3)). Esta línea crea una secuencia de números que comienza desde inicio y avanza de 3 en 3 hasta llegar a 100.
+Devuelve esta lista de números.
+
+2)
+Se asigna el valor 91 a la variable inicio.
+Se llama a la función cada_tres_numeros con el valor de inicio como argumento.
+La función es ejecutada y el resultado se almacena en la variable resultado.
+Finalmente, se imprime el contenido de la variable resultado.
+
+En resumen, este código define una función que genera una lista de números incrementados de 3 en 3, comenzando desde un número inicial dado hasta llegar a 100 (inclusive), siempre que el número inicial no sea mayor que 100. Luego, muestra la lista resultante cuando se llama a la función con inicio = 91.
+"""
+
+# B - Retirar el Centro:
+"""
+
+Crea una función llamada remove_middle que tenga tres parámetros llamados my_list, start y end.
+
+La función debe devolver una lista en la que se hayan eliminado todos los elementos de mi_lista con un índice comprendido entre inicio y fin (ambos inclusive).
+
+1 - Defina la función para que acepte tres parámetros: "mi_lista", "índice" y "índice_final".
+
+2 - Obtener todos los elementos antes del índice inicial, en una variable.
+
+3 - Obtener todos los elementos después del índice final, en una variable.
+
+4 - Obtener todos los elementos después del índice final, en una variable.
+
+5 - Combinar las dos listas parciales en una nueva variable.
+
+6 - Devolver el resultado.
+
+"""
+
+def quitar_centro(mi_lista, indice, indice_final):
+    elementos_antes = mi_lista[:indice]
+    elementos_despues = mi_lista[indice_final + 1:]
+    resultado = elementos_antes + elementos_despues
+    return resultado
+    
+print(quitar_centro([4, 8, 15, 16, 23, 42], 1, 3))
+
+"""
+Resumen:
+
+Recibiendo la lista y los índices:
+La función toma tres argumentos: la lista mi_lista y los índices indice e indice_final.
+
+Extracción de elementos antes y después del rango a eliminar:
+"elementos_antes" toma todos los elementos desde el principio de la lista hasta el índice indice, pero excluyendo el elemento en el índice "indice".
+
+"elementos_despues" toma todos los elementos desde el índice indice_final + 1 hasta el final de la lista.
+
+Eliminación del rango y obtención del resultado:
+La variable "resultado se convierte en una nueva lista que contiene todos los elementos antes del rango a eliminar (elementos_antes) concatenados con todos los elementos después del rango (elementos_despues). Esta concatenación efectivamente elimina el rango especificado.
+"""
+
+# C Artículo Más Frecuente
