@@ -36,7 +36,7 @@ Resumen:
 
 Define una función llamada "cada_tres_numeros" que toma un parámetro "inicio".
 Comprueba si el número inicio es mayor que 100. Si lo es, devuelve una lista vacía []. Esto es para asegurarse de que la función solo trabaje con valores hasta 100.
-Si inicio es válido (menor o igual a 100):
+Si "inicio" es válido (menor o igual a 100):
 Genera una lista de números utilizando list(range(inicio, 101, 3)). Esta línea crea una secuencia de números que comienza desde inicio y avanza de 3 en 3 hasta llegar a 100.
 Devuelve esta lista de números.
 
@@ -69,7 +69,6 @@ La función debe devolver una lista en la que se hayan eliminado todos los eleme
 6 - Devolver el resultado.
 
 """
-
 def quitar_centro(mi_lista, indice, indice_final):
     elementos_antes = mi_lista[:indice]
     elementos_despues = mi_lista[indice_final + 1:]
@@ -94,3 +93,39 @@ La variable "resultado se convierte en una nueva lista que contiene todos los el
 """
 
 # C Artículo Más Frecuente
+"""
+Crea una función llamada "elemento_más_frecuente" que tenga tres parámetros llamados: A) mi_lista, B) elemento1 y C) elemento2.
+
+Devuelve elemento1 o elemento2 dependiendo de qué elemento aparece más a menudo en mi_lista.
+
+Si los dos elementos aparecen el mismo número de veces, devuelve elemento1.
+
+1 - Define la función para que acepte tres parámetros: A) la lista, B) primer elemento y C) segundo elemento.
+
+2 - Contar el número de veces que el elemento1 aparece en nuestra lista.
+
+3 - Contar el número de veces que el elemento2 aparece en nuestra lista.
+
+4 - Devuelve el elemento que aparece con más frecuencia en mi_lista - si ambos elementos aparecen el mismo número de veces, devuelve el elemento1.
+
+"""
+
+def elemento_mas_frecuente(mi_lista, elemento1, elemento2):
+    # Cuenta cuántas veces aparece cada elemento en la lista
+    num_1 = mi_lista.count(elemento1)
+    num_2 = mi_lista.count(elemento2)
+    # Compara los recuentos y devuelve el elemento más frecuente
+    if num_1 > num_2: # A
+        return elemento1
+    elif num_1 == num_2: # B
+        return elemento1
+    else: # C
+        return elemento2
+
+# Prueba la función con una lista y elementos de ejemplo
+print(elemento_mas_frecuente([2, 3, 3, 2, 3, 2, 3, 2, 3], 2, 3))
+
+"""
+Resumen:
+Este código define una función llamada "elemento_mas_frecuente" que toma una lista (mi_lista) y dos elementos (elemento1 y elemento2). Lo que hace la función es contar cuántas veces aparece cada uno de los dos elementos en la lista y luego devuelve el elemento que aparece con más frecuencia.
+"""
