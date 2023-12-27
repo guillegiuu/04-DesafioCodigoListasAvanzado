@@ -176,3 +176,45 @@ C) valores_hasta_indice = valores_hasta_indice + mi_lista[indice + 1:]: Une la l
 D) return valores_hasta_indice: Devuelve la nueva lista con los elementos originales hasta el índice dado, pero con el valor en esa posición duplicado.
 """
 
+# E Elemento Central
+"""
+Crea una función llamada "elemento_medio" que tenga un parámetro "llamado mi_lista".
+
+Si hay un número impar de elementos en mi_lista, la función debe devolver el elemento del medio. Si hay un número par de elementos, la función debe devolver la media de los dos elementos centrales.
+
+1 - Definir la función para que acepte un parámetro para nuestra lista de números.
+
+2 - Determinar si la longitud (len) de la lista es par o impar. (if, else)
+
+3 - Si la longitud de la lista es par, devolver la media de los dos elementos centrales.
+
+4 - Si la longitud de la lista es impar, devolver el elemento central.
+
+"""
+
+def elemento_medio(mi_lista):
+    if len(mi_lista) % 2 == 0: 
+    # Si la longitud de la lista es par
+    # Calcula el elemento medio como promedio de dos elementos centrales
+        return (mi_lista[len(mi_lista) // 2 - 1] + mi_lista[len(mi_lista) // 2]) / 2
+    else:
+    # Si la longitud de la lista es impar
+    # Devuelve el elemento central
+        return mi_lista[len(mi_lista) // 2]
+
+
+print(elemento_medio([5, 2, -10, -4, 4, 5]))
+
+"""
+Resumen:
+Esta función toma una lista (mi_lista) como argumento.
+
+Verificación si la lista tiene un número par o impar de elementos:
+
+A) Si la longitud de la lista es par (la división entre la longitud de la lista y 2 no tiene residuo), el código en la sección # B PAR encuentra los dos elementos en el medio y devuelve su promedio.
+
+B) Si la longitud de la lista es impar, se devuelve simplemente el elemento en la posición central.
+
+Para la lista proporcionada [5, 2, -10, -4, 4, 5], que tiene un número par de elementos, el código calcula el promedio de los dos elementos centrales (en este caso, -10 y -4) y devuelve ese valor. En este caso, el resultado impreso sería -7.0, ya que el promedio de -10 y -4 es -7.
+
+"""
