@@ -129,3 +129,47 @@ print(elemento_mas_frecuente([2, 3, 3, 2, 3, 2, 3, 2, 3], 2, 3))
 Resumen:
 Este código define una función llamada "elemento_mas_frecuente" que toma una lista (mi_lista) y dos elementos (elemento1 y elemento2). Lo que hace la función es contar cuántas veces aparece cada uno de los dos elementos en la lista y luego devuelve el elemento que aparece con más frecuencia.
 """
+
+# D Doble índice
+"""
+Crea una función llamada "doble_índice" que tenga dos parámetros: A) una lista llamada mi_lista y B) un único número llamado índice.
+
+La función debe devolver (return) una nueva lista donde todos los elementos son los mismos que en mi_lista excepto el elemento en el índice. El elemento en el índice debe ser el doble del valor del elemento en el índice de mi_lista original.
+
+1 - Define la función para que acepte dos parámetros, uno para la lista y otro para el índice del valor que vamos a duplicar.
+
+2 - Comprueba si el índice no es válido. Si no es válido, devuelve la lista original.
+
+3 - Si el índice es válido, obtiene todos los valores hasta el índice y los almacena como una nueva lista.
+
+4 - Añade el valor del índice multiplicado por 2 a la nueva lista.
+
+"""
+def doble_indice(mi_lista, indice):
+    if indice >= len(mi_lista):
+        return mi_lista # Si el índice es inválido, devuelve la lista original
+    else:
+        valores_hasta_indice = mi_lista[:indice] # Obtiene los valores hasta el índice
+        valores_hasta_indice.append(mi_lista[indice] * 2) # Añade el valor del índice multiplicado por 2
+        return valores_hasta_indice # Devuelve la nueva lista
+    
+
+print(doble_indice([3, 8, -10, 12], 2))
+
+"""
+Resumen:
+Esto define una función llamada "doble_indice" que toma dos argumentos: mi_lista, que es la lista de números, y indice, que es el índice que se quiere modificar.
+
+Verificación del índice:
+Esta parte verifica si el índice proporcionado (indice) es mayor o igual que la longitud de la lista (len(mi_lista)). Si el índice es mayor o igual al tamaño de la lista, significa que el índice es inválido y la función devuelve la lista original.
+
+Procesamiento si el índice es válido:
+Si el índice es válido, se ejecuta esta parte del código:
+
+A) valores_hasta_indice = mi_lista[:indice]: Crea una nueva lista (valores_hasta_indice) que contiene los elementos de mi_lista desde el inicio hasta el índice especificado, sin incluir el elemento en el índice.
+
+B) valores_hasta_indice.append(mi_lista[indice] * 2): Añade a la lista valores_hasta_indice el elemento en la posición del índice multiplicado por 2.
+
+C) return valores_hasta_indice: Devuelve la nueva lista con los elementos originales hasta el índice dado, pero con el valor en esa posición duplicado.
+"""
+
