@@ -151,6 +151,7 @@ def doble_indice(mi_lista, indice):
     else:
         valores_hasta_indice = mi_lista[:indice] # Obtiene los valores hasta el índice
         valores_hasta_indice.append(mi_lista[indice] * 2) # Añade el valor del índice multiplicado por 2
+        valores_hasta_indice = valores_hasta_indice + mi_lista[indice + 1:] 
         return valores_hasta_indice # Devuelve la nueva lista
     
 
@@ -170,6 +171,8 @@ A) valores_hasta_indice = mi_lista[:indice]: Crea una nueva lista (valores_hasta
 
 B) valores_hasta_indice.append(mi_lista[indice] * 2): Añade a la lista valores_hasta_indice el elemento en la posición del índice multiplicado por 2.
 
-C) return valores_hasta_indice: Devuelve la nueva lista con los elementos originales hasta el índice dado, pero con el valor en esa posición duplicado.
+C) valores_hasta_indice = valores_hasta_indice + mi_lista[indice + 1:]: Une la lista valores_hasta_indice con los elementos de mi_lista que están después del elemento en el índice, creando así una lista que contiene todos los elementos hasta el índice dado, con el valor en esa posición duplicado.
+
+D) return valores_hasta_indice: Devuelve la nueva lista con los elementos originales hasta el índice dado, pero con el valor en esa posición duplicado.
 """
 
